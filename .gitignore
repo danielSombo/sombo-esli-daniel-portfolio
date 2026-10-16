@@ -1,0 +1,9 @@
+node_modules
+dist
+.env
+
+# Fichiers de test et de recette : restent sur le PC, jamais sur GitHub
+DONNEES_DE_TEST.txt
+RECETTE.md
+server/src/scripts/lancer-api-essai.ps1
+server/src/scripts/lancer-site-essai.ps1
