@@ -96,6 +96,7 @@ export function imageHref(id) {
 export const PROJECT_CATEGORIES = [
   { value: 'processus', label: 'Processus métier' },
   { value: 'logiciel', label: 'Logiciel' },
+  { value: 'site-web', label: 'Sites web' },
   { value: 'data', label: 'Data' },
 ]
 

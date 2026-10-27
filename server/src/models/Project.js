@@ -2,7 +2,7 @@ import mongoose from 'mongoose'
 import ImageFile from './ImageFile.js'
 import { orderField, schemaOptions } from './options.js'
 
-export const PROJECT_CATEGORIES = ['processus', 'logiciel', 'data']
+export const PROJECT_CATEGORIES = ['processus', 'logiciel', 'site-web', 'data']
 
 const projectSchema = new mongoose.Schema(
   {
