@@ -100,13 +100,14 @@ const isPlaceholder = (url) => !url || url.startsWith('[')
                 EN COURS
               </span>
             </div>
-            <!-- Capture de l'application -->
+            <!-- Capture de l'application : affichée en entier, sans recadrage, quelle que soit sa forme
+                 (une capture très haute, de téléphone par exemple, est limitée en hauteur et centrée) -->
             <figure v-if="current.imageId" class="relative m-0 max-w-[620px] border-[1.5px] border-bone/40">
               <img
                 :src="imageHref(current.imageId)"
                 :alt="`Capture : ${current.name}`"
                 loading="lazy"
-                class="block aspect-[16/9] w-full object-cover object-top"
+                class="block h-auto max-h-[460px] w-full object-contain"
               />
             </figure>
             <h3 class="relative m-0 text-[clamp(44px,5vw,72px)] leading-[0.92] font-extrabold tracking-[-0.04em]">
@@ -135,7 +136,9 @@ const isPlaceholder = (url) => !url || url.startsWith('[')
               >
                 Voir la démo
               </a>
+              <!-- Pas de lien GitHub (projet confidentiel ou dépôt privé) : pas de bouton -->
               <a
+                v-if="current.repo"
                 :href="isPlaceholder(current.repo) ? '#' : current.repo"
                 target="_blank"
                 rel="noopener"
